@@ -168,6 +168,13 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
 
+        // Form helper
+        Collective\Html\HtmlServiceProvider::class,
+
+
+        Mews\Purifier\PurifierServiceProvider::class,
+
+        Intervention\Image\ImageServiceProvider::class,
         /*
          * Application Service Providers...
          */
