@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', '| Edit posts')
 
@@ -75,7 +75,7 @@
             {!! Form::close() !!}
         </div>
     </div>
-    
+
 @endsection
 
 @section('scripts')

@@ -19,7 +19,7 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                @if (!Request::is('admin') )
+                @if (Request::path() != '/admin')
                 <li class="{{ Request::is('blog/*') ? 'active' : '' }}">
                     <a href="{{ url('/blog') }}">Blog</a>
                 </li>
@@ -32,9 +32,7 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
-
-                <!-- Authentication Links -->
-                @if (Request::is('admin') )
+                @if (Request::path() != '/admin')
                     @if (Auth::guest())
                         <li class="{{ Request::is('login') ? 'active' : '' }}"><a href="{{ url('/login') }}">Login</a></li>
                         <li class="{{ Request::is('register') ? 'active' : '' }}"><a href="{{ url('/register') }}">Register</a></li>
@@ -53,7 +51,7 @@
                         </li>
                         <li class="dropdown">
                             <a href="/admin" class="dropdown-toggle avatar">
-                                <img src="/img/uploads/avatars/{{ $user->avatar }}" alt=""/> {{ Auth::user()->name }} <span class="caret"></span>
+                                <img src="/img/uploads/avatars/{{ Auth::user()->avatar }}" alt=""/> {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
